@@ -1,0 +1,258 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --tamañoPrincipal: 12px;
+    --violeta: hsl(273, 75%, 66%);
+    --azul: hsl(240, 73%, 65%);
+    --tgrisFuerte: hsl(237, 12%, 33%);
+    --tgrisMedio: hsl(240, 6%, 50%);
+    --grisSuave:hsl(240, 5%, 91%);
+    --rojo: hsl(14, 88%, 65%);
+    --azulFuerte: hsl(238, 29%, 16%);
+}
+
+html{
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+body{
+    background: linear-gradient(to bottom, var(--violeta), var(--azul));
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+}
+
+.contenedor{
+    background: white;
+    width: 80%;
+    height: 600px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    border-radius: 20px; 
+    box-shadow: 0px 15px 26px -9px rgba(0,0,0,0.45);  
+    /* padding: 54px; */
+    overflow: hidden;
+}
+
+.attribution{
+    width: 100%;
+}
+
+
+/* Contenido ---------------------------------------------------------------*/
+h1{
+    margin-bottom: 52px;
+}
+
+.contenido__preguntas{
+    width: 80%;
+} 
+
+
+
+.titulo{
+    text-decoration: none;
+    font-size: 16px;
+    color: var(--tgrisFuerte);
+    font-weight: 400;
+    margin-bottom: 24px;
+    transition: all .2s ease-in-out;
+}
+
+.preguntas{
+    margin-bottom: 14px;
+    border-bottom: 1px solid var(--grisSuave);
+}
+
+.descripcion{
+    margin-bottom: 12px;
+    font-size: var(--tamañoPrincipal);
+    color: var(--tgrisMedio);
+}
+
+.desactivado{
+    opacity: 0;
+    display: none;
+}
+
+.descripcion__activo{
+    opacity: 1;
+    display: block;
+}
+
+.principal{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.principal:hover{
+    color: var(--rojo);
+}
+
+.titulo:hover{
+    color: var(--rojo)
+}
+
+.activo{
+    font-weight: 700;
+}
+
+.rotar{
+    transform: rotateX(180deg);
+}
+
+/* Keyframes------------------------------------------------------------ */
+/* @keyframes rotar{
+    0%{
+        transform: rotateX(0);
+    }
+    100%{
+        transform: rotateX(180deg);
+    }
+}  */
+
+
+
+/* Imagen--------------------------------------------------------------- */
+.cont_imagen{
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    overflow: hidden;
+    position: relative;
+}
+
+.imagen{
+    width: 100%;
+    height: 100%;
+}
+
+.mujer{
+    height: 70%;
+    position: absolute;
+    top: 18%;
+    right:60px;
+}
+
+.cubo{
+    position: absolute;
+    top: 45%;
+    left: 42px;
+    display: inline-block;
+    z-index: 2;
+}
+
+.mobile, .sombra, .mobile-mujer{
+    display: none;
+}
+
+@media screen and (max-width: 1280px){
+    .cubo_img{
+        top: 40%;
+        left: 36px;
+    }
+
+    .mujer{
+        width: 95%;
+        height: 60%;
+    }
+}
+
+@media screen and (max-width: 980px){
+    .contenedor{
+        height: auto;
+        padding: 42px 0;
+    }
+
+    .contenido__preguntas{
+        width: 90%;
+    }
+
+    .mujer, .cubo_img{
+        display: none;
+    }
+
+    .mobile{
+        width: 90%;
+        height: 50%;
+        display: block;
+    }
+
+    .imagen{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* background-image: url(../images/bg-pattern-mobile.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover; */
+    }
+}
+
+@media screen and (max-width: 768px){
+    body{
+        height: auto;
+    }
+    .contenedor{
+        padding: 0;
+        padding-bottom: 42px;
+        margin: 150px 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contenido{
+        width: 80%;
+    }
+
+    .contenido__preguntas{
+        width: 100%;
+    }
+
+    h1{
+        text-align: center;
+    }
+
+    .cont_imagen{
+        background: none;
+    }
+
+    .mobile{
+        display: none;
+    }
+
+    .sombra{
+        display: block;
+        margin-bottom: 54px;
+    }
+
+    .mobile-mujer{
+        margin: 0 auto;
+        display: block;
+    }
+
+    .cubo{  
+        width: 100%;
+        margin: 50px auto 0 auto;
+        top: 0;
+        left: -15px;   
+        z-index: 10; 
+    }
+    
+}
